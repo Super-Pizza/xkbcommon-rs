@@ -22,8 +22,10 @@ repository = "https://github.com/wysiwys/xkbcommon-rs"
 members = ["codegen", "keysym_map_gen"]
 
 [features]
+default = ["keywords"]
 client = []
 server = []
+keywords = []
 
 [profile.release]
 panic = 'abort'

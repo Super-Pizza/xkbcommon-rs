@@ -21,21 +21,23 @@
  * DEALINGS IN THE SOFTWARE.
  *
  */
-//use std::path::Path;
 
-//use xkbcommon_rs_codegen::*;
+#[cfg(feature = "keywords")]
+use std::path::Path;
+
+#[cfg(feature = "keywords")]
+use xkbcommon_rs_codegen::*;
 
 fn main() {
     // converts all lalrpop files into .rs files
     lalrpop::process_root().unwrap();
 
-    // TODO: enable as feature
-    /*
+    #[cfg(feature = "keywords")]
     make_config(&Path::new("src").join("config.rs"));
 
+    #[cfg(feature = "keywords")]
     make_keywords_file(
         &Path::new("src").join("keywords.csv"),
         &Path::new("src").join("keywords.rs"),
     );
-    */
 }
